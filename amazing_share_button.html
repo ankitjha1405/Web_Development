@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Share Button</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+    }
+    
+
+    body {
+        background-color: black;
+    }
+
+    .amazing_share_button_main{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .amazing_share_button_toggle{
+        width: 50px;
+        height: 50px;
+        background: #c70039;
+        border-radius: 50%;
+        border: 2px solid #c70039;
+        cursor: pointer;
+        position: relative;
+        
+    }
+    .amazing_share_button_toggle i{
+        transform: translate(8px,9px);
+    }
+    .amazing_share_button_toggle::before{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        color: white;
+        font-family: fontAwesome;
+        text-align: center;
+        line-height: 50px;
+        font-size: 22px;
+    }
+    .amazing_share_button_share.active .toogle::before{
+
+        content: '\f00d';
+        font-size: 2rem;
+    }
+    .amazing_share_button_share{
+        position: relative;
+    }
+    .amazing_share_button_share ol{
+        position: absolute;
+        margin: 2px;
+        width: 50px;
+        height: 50px;
+    }
+    .amazing_share_button_share ol li{
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: white;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: all .4s;
+    }
+    .amazing_share_button_share ol li a{
+        color: black;
+    }
+    .amazing_share_button_share ol li i{
+        transform: translate(11px,0px);
+    }
+    .amazing_share_button_share.active ol li{
+        transform: translate(0);
+        transition: all 0.4s;
+    }
+    .amazing_share_button_share.active ol li:nth-child(1){
+        transition-delay: 0.1s;
+        transform: translateX(60px);
+    }
+    .amazing_share_button_share.active ol li:nth-child(2){
+        transition-delay: 0.2s;
+        transform: translateY(60px);
+    }
+    .amazing_share_button_share.active ol li:nth-child(3){
+        transition-delay: 0.3s;
+        transform: translateX(-60px);
+    }
+    .amazing_share_button_share.active ol li:nth-child(4){
+        transition-delay: 0.4s;
+        transform: translateY(-60px);
+    }
+    
+</style>
+<body>
+    <div class="amazing_share_button_main">
+        <div class="amazing_share_button_share">
+            <ol>
+                <li><a href="https://instagram.com"><i class="fa fa-instagram fa-2x"></i></a></li>
+                <li><a href="https://facebook.com"><i class="fa fa-facebook fa-2x"></i></a></li>
+                <li><a href="https://twitter.com"><i class="fa fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://whatsapp.com"><i class="fa fa-whatsapp fa-2x"></i></a></li>
+            </ol>
+            <div class="amazing_share_button_toggle">
+                <i class="fa fa-share-alt fa-2x"></i>
+
+               
+        </div>
+    </div>
+    <script>
+        const toggle=document.querySelector('.amazing_share_button_toggle');
+        toggle.addEventListener('click' , ()=> {
+            const sharebtn = document.querySelector('.amazing_share_button_share');
+            sharebtn.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

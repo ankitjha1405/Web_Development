@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Effect</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    h1 {
+        color: #426696;
+        font-weight: 600;
+        font-size: 3rem;
+        opacity: 0.8;
+    }
+
+    h2,
+    p {
+        color: #658ec6;
+        font-weight: 500;
+        opacity: 0.8;
+
+    }
+
+    h3 {
+        color: #426696;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+
+    main {
+        min-height: 100vh;
+        background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .glass {
+        background: white;
+        min-height: 80vh;
+        width: 60%;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+        border-radius: 2rem;
+        z-index: 2;
+        backdrop-filter: blur(2rem);
+        display: flex;
+    }
+
+    .circle1,
+    .circle2 {
+        background: white;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+        border-radius: 2rem;
+        height: 10rem;
+        width: 10rem;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+        border-radius: 50%;
+    }
+
+    .circle1 {
+        left: 15%;
+        top: 74%;
+    }
+
+    .circle2 {
+        left: 74%;
+        top: 1%;
+
+    }
+
+    img {
+        width: 12%;
+        height: 12%;
+    }
+
+    .dashboard {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        text-align: center;
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+        border-radius: 2rem;
+
+    }
+
+    .games {
+        flex: 2;
+    }
+
+    .link {
+        display: flex;
+        margin: 1rem 0rem;
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .link h2 {
+        padding: 0rem 2rem;
+    }
+
+    .pro {
+        background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+        border-radius: 2rem;
+        color: white;
+        height: 15%;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .pro h2 {
+        color: white;
+    }
+
+    .status {
+        margin-bottom: 2rem
+    }
+    .status input{
+        background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+        border: none;
+        width: 50%;
+        border-radius: 2rem;
+        padding: 0.5rem;
+        height: 23px;
+    }
+    .games{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 2rem;
+        /* align-items: center; */
+    }
+    .card{
+        display: flex;
+        /* flex-direction: column; */
+        background: linear-gradient(to left top,rgba(255,255,255,0.8),rgba(255,255,255,0.5));
+        /* justify-content: center; */
+        /* align-items: center; */
+        border-radius: 1rem;
+        margin: 1.2rem 0rem;
+        padding: 1rem;
+        box-shadow: 6px 6px 20px rgba(122,122,122,0.212);
+        justify-content: space-between;
+    }
+    .progress{
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    width: 200%;
+    height: 25%;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+   
+    }
+    .progress::after{
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: rgb(236,236,236);
+        position: absolute;
+        left: 60%;
+    }
+    .card-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .percentage{
+        font-weight: bold;
+        background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .user img{
+        margin-top: 10px;
+        width: 50px;
+        height: 50px;
+    }
+</style>
+
+<body>
+    <main>
+        <section class="glass">
+            <div class="dashboard">
+                <div class="user">
+                    <img src="images/user.png" alt="#">
+                    <h3>Ankit jha</h3>
+                    <p>Pro Player</p>
+                </div>
+                <div class="links">
+                    <div class="link">
+                        <img src="images/stream.jpg" alt="#">
+                        <h2>Streams</h2>
+                    </div>
+                    <div class="link">
+                        <img src="images/gamelogo.png" alt="#">
+                        <h2>Games</h2>
+                    </div>
+                    <div class="link">
+                        <img src="images/new.png" alt="#">
+                        <h2>New</h2>
+                    </div>
+                    <div class="link">
+                        <img src="images/library.png" alt="#">
+                        <h2>LIbrary</h2>
+                    </div>
+                </div>
+                <div class="pro">
+                    <h2>Join pro for freee games.</h2>
+                    <!-- <img src="images/logo.png" alt="##"> -->
+                </div>
+            </div>
+            <div class="games">
+                <div class="status">
+                    <h1>Active games</h1>
+                    <input type="text" />
+                </div>
+                <div class="cards">
+                    <div class="card">
+                        <img src="images/game1.png" />
+                        <div class="card-info">
+                            <h2>Assasian</h2>
+                            <p>PS5 VErsion</p>
+                            <div class="progress"></div>
+                        </div>
+                        <h2 class="percentage">60%</h2>
+                    </div>
+                    <div class="card">
+                        <img src="images/game2.png" />
+                        <div class="card-info">
+                            <h2>Assasian</h2>
+                            <p>PS5 VErsion</p>
+                            <div class="progress"></div>
+                        </div>
+                        <h2 class="percentage">60%</h2>
+                    </div>
+                    <div class="card">
+                        <img src="images/game3.png" />
+                        <div class="card-info">
+                            <h2>Assasian</h2>
+                            <p>PS5 VErsion</p>
+                            <div class="progress"></div>
+                        </div>
+                        <h2 class="percentage">60%</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Zoom Effect</title>
+</head>
+<style>
+    *,*::before, *::after{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        background-color: black;
+    }
+    button{
+        font-size: 50px;
+        padding: 10px 40px;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        cursor: pointer;
+        top: 50%;
+    }
+    button::before{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        content: '';
+        width: 100%;
+        height: 100%;
+        /* background: url(); */
+        transition: .2s;
+        z-index: -1;
+
+
+    }
+    button:hover::before{
+        transform: scale(2);
+    }
+    button .text{
+        z-index: 1;
+        position: relative;
+        transition: .3s;
+
+    }
+    button .text::before{
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(0.22);
+        content:attr(data-text);
+        transition: 0.3s;
+        color: #fff;
+        opacity: 0;
+    }
+    button:hover .text{
+        transform: scale(5);
+        color: transparent;
+    }
+    button:hover .text::before{
+        opacity: 1;
+    }
+
+
+</style>
+<body>
+    <button>
+        <div class="text" data-text="world">Hello</div>
+    </button>
+</body>
+</html>

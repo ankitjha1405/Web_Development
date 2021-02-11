@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Chat Window</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: black;
+        margin-right: 10px;
+        display: flex;
+        width: 98vw;
+        height: 98vh;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex-direction: column;
+    }
+    img{
+        width: 70px;
+        height: 70px;
+        position: relative;
+        left: 10px;
+        top: 4px;
+    }
+    .chat_box_header{
+        background: #35D6ED;
+        color: black;
+        display: flex;
+        width: 320px;
+        /* justify-content: center; */
+        align-items: center;
+        /* border: 2px solid black; */
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    .title{
+        width: 100%;
+        font-weight: 700;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .chat_area{
+        width: 320px;
+        background-color: white;
+        color: black;
+        display: flex;
+        /* align-items: center; */
+        flex-direction: column;
+        /* justify-content: center; */
+        margin-left: 10px;
+        height: 300px;
+    }
+    .message{
+        width: 200px;
+        /* border: 2px solid black; */
+        border-radius: 10px;
+        margin: 6px;
+        padding: 10px;
+    }
+    .message-left{
+        display: flex;
+        background: bisque;
+        opacity: 2;
+        justify-content: flex-start;
+        position: relative;
+        left: 2px;
+    }
+    .message-right{
+        background: yellow;
+        position: relative;
+        left: 80px;
+        display: flex;
+    }
+    .chatbox-footer{
+        display: flex;
+        /* margin-top: 10px; */
+        width: 320px;
+        justify-content: space-evenly;
+        background: #35D6ED;
+        margin-left: 10px;
+        height: 40px;
+        align-items: center;
+        /* border: 2px solid black; */
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+
+
+    }
+    .message_type input{
+        /* width: 50px; */
+        border-radius: 20px;
+        height: 25px;
+        border: none;
+        padding: 2px;
+        padding-left: 10px;
+        font-size: 15px;
+    }
+    .popup{
+        position: fixed;
+        right: 30px;
+        top: 700px;
+        color: white;
+        filter:inset drop-shadow(0px 1px 2px #d2d2d2);
+        cursor: pointer;
+    }
+</style>
+<body>
+
+    <div class="chat_box_header">
+        <img src="images/chat_support.png">
+        <div class="title">
+            <h1>Chat Support</h1>
+            <p>Tell us how we can help you ?</p>
+        </div>
+    </div>
+
+
+    <div class="chat_area">
+        <div class="message message-left">
+            <p>Hey! Tell us how we can help you.</p>
+        </div>
+        <div class="message message-right">
+            <p>I need your help i got stuck in a problem and i am facing some kind of issue in odering products.</p>
+        </div>
+        <div class="message message-left">
+            <p>Typing....</p>
+        </div>
+    </div>
+
+
+    <div class="chatbox-footer">
+        <div class="emoji">
+            <i class="fa fa-smile-o fa-lg"></i>
+        </div>
+        <div class="mic">
+            <i class="fa fa-microphone fa-lg"></i>
+        </div>
+        <div class="message_type">
+            <input type="text" placeholder="Write your Message...">
+        </div>
+        <div class="send">
+            <i class="fa fa-paper-plane fa-lg"></i>
+
+        </div>
+        <div class="link">
+            <i class="fa fa-link fa-lg"></i>
+        </div>
+    </div>
+</script>
+</body>
+</html>

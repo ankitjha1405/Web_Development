@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Hover Effect</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+
+    body {
+        background-color: black;
+    }
+
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .card_hover_effect_main{
+        width: 100%;
+        height: 100vh;
+    }
+    .card_hover_effect_box{
+        width: 350px;
+        height: 250px;
+        margin: 10px;
+        flex-direction: column;
+        background: white;
+        font-size: 1.2rem;
+        border-radius: 15px;
+        position: relative;
+        transition: all 1s;
+        overflow: hidden;
+    }
+    .card_hover_effect_box:hover{
+        color: white;
+    }
+    .card_hover_effect_box::before{
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        width: 5px;
+        height: 150px;
+        border-radius: 50px;
+        transition: all 1s;
+        background: linear-gradient(147deg,#ffe538 0%, #ff2525 74%);
+    }
+
+/* If you want to make that coloured line on the top */
+
+    /* .card_hover_effect_box::before{
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 25px;
+        width: 300px;
+        height: 10px;
+        border-radius: 50px;
+        transition: all .4s;
+        background: linear-gradient(147deg,#ffe538 0%, #ff2525 74%);
+    } */
+
+    .card_hover_effect_box:nth-child(1)::before{
+        background: linear-gradient(19deg,#21d4fd 0%, #8721ff 74%);   
+    }
+    .card_hover_effect_box:hover::before{
+        top:0;
+        left:0;
+        border-radius: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    .card_hover_effect_box p,h1{
+        margin: 5px 50px;
+        z-index: 1000;
+    }
+</style>
+
+<body>
+    
+    <div class="card_hover_effect_main center">
+        <div class="card_hover_effect_box center">
+            <h1>Heading</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eligendi mollitia officiis inventore
+                consequuntur rerum, a reiciendis doloremque excepturi incidunt atque fuga corrupti temporibus sed
+                voluptas, magnam pariatur rem nam.
+            </p>
+        </div>
+        <div class="card_hover_effect_box center">
+            <h1>Heading</h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum eligendi mollitia officiis inventore
+                consequuntur rerum, a reiciendis doloremque excepturi incidunt atque fuga corrupti temporibus sed
+                voluptas, magnam pariatur rem nam.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

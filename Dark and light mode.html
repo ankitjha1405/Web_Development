@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Box</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        /* background-color: black; */
+    }
+    
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .nightMode{
+        transition: 0.4s all ease-in;
+        background: #0d1117;
+    }
+    .switch{
+        position: relative;
+    }
+    input[type="checkbox"]{
+        width: 90px;
+        height:50px;
+        background: transparent;
+        -webkit-appearance: none;
+        outline: none;
+        border: 5px solid red;
+        border-radius: 20px;
+    }
+    input[type="checkbox"]::before{
+        content: '\f185';
+        font-family: fontAwesome;
+        font-weight: 900;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 50px;
+        height: 50px;
+        /* background: #2f363d; */
+        color: black;
+        background: yellow;
+        border-radius: 50%;
+        transform: scale(-1.05) rotate(60deg);
+        /* color: #ffdf5d; */
+        transition: all .4s linear;
+    }
+    input[type="checkbox"]:checked::before{
+        content: '\f186';
+        font-family: fontAwesome;
+        font-weight: 900;
+        font-size: 25px;
+        left: 50px;
+        background: #2f363d;
+        color: #ffdf5d;
+        /* color: black; */
+        /* background: yellow; */
+    }
+
+
+</style>
+<body>
+    <div class="switch">
+        <input type="checkbox" name="" id="night" onclick="myFunction()">
+    </div>
+    <script>
+     function myFunction() {
+            var element = document.body;
+            element.classList.toggle("nightMode");
+        }
+    </script>
+</body>
+</html>
